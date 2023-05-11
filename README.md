@@ -1,5 +1,5 @@
 # T1A3: Calorie Tracker
-This project aims to build a command line interface (CLI) application that gives the user a way to calorie count and get a rough daily calorie intake recommendation based on height and weight. 
+This project aims to build a console application that gives the user a way to calorie count and get a rough daily calorie intake recommendation based on height and weight. 
 
 ## Use instructions:
 * IDK YET
@@ -13,4 +13,4 @@ This project aims to build a command line interface (CLI) application that gives
 * Ability to recount the consumed meals, displaying meal name and calorie count
 
 ## Sources: 
-I used this [To-do list](https://realpython.com/python-typer-cli/#demo) as a research source for how to implement command line prompts and such
+I used [this](https://youtu.be/nqx2kMgKRVo) as a research source for how to implement console application.
