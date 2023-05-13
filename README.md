@@ -15,5 +15,6 @@ This project aims to build a console application that gives the user a way to ca
 * Ability to recount the consumed meals, displaying meal name and calorie count
 
 ## Sources: 
+* [Here](https://github.com/KylashSri/srikylashSrishanmuganathan_T1A3) is a link to my github repo.
 * [This](https://youtu.be/nqx2kMgKRVo) was my source for how to implement console application.
 * [This](https://sparkbyexamples.com/pandas/pandas-add-row-to-dataframe/) was my source for using pandas dataframe.
