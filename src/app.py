@@ -21,6 +21,7 @@ food_item_df = pd.DataFrame(food_item_dict)
 print("welcome to Calorie Tracker")
 print("this program allows you to track how many calories you've had and compare it against a recommendation")
 
+user_name = input("What is your username? ")
 user_weight = float(input("What is your weight (in kg)? "))
 user_height = float(input("What is your height (in cm)? "))
 
