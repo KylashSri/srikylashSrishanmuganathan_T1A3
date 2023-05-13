@@ -1,37 +1,32 @@
+import math
+import numpy as np
+import pandas as pd
+import curses
+from curses import wrapper
+
 def get_calorie_recommendation(weight, height):
     return 14*weight + 5*height
 
-def set_user_weight():
-    user_weight = input("What is your weight (in kg)? ")
-    return
+def create_new_food_item
 
-def set_user_height():
-    user_height = input("What is your height (in cm)? ")
-    return
-    # A list of tuples (tuples are added to meal_list via user prompt)
+food_item_dict = {'food_item': [], 'calorie_count': []}
+food_item_df = pd.DataFrame(meal_list)
 
-meal_list = []
-current_cal_intake = 0
 print("welcome to Calorie Tracker")
 print("this program allows you to track how many calories you've had and compare it against a recommendation")
 
 user_weight = float(input("What is your weight (in kg)? "))
 user_height = float(input("What is your height (in cm)? "))
 
-daily_rec_cal = get_calorie_recommendation(user_weight, user_height)
 print("your recommended daily calorie intake is " + str(get_calorie_recommendation(user_weight, user_height)))
-
-print("your current calorie intake today is " + str(current_cal_intake) + " calories")
-# meal_name = input("what have you eaten today? ")
-# meal_calories = input("how many calories did it have? ") 
-# if(meal_calories != meal_calories): # error handle for NaN
-#     print("meal_calories is must be a number")
+print("your current calorie intake today is " + "TODO" + " calories")
 
 print("type 'help' for command list")
 
 while True:
     command = input("> ")
     if(command == 'help'):
+        # show avail commands
         print("type 'help' to get the list of commands")
         print("type 'info' to show current weight, height and current calorie intake")
         print("type 'meal' to store information on a meal")
@@ -44,16 +39,19 @@ while True:
         print("type 'quit' to quit")
     elif(command == 'info'):
         # loop through meal_list to find current calorie intake
-        print("info")
+        print("weight: " + str(user_weight) + " kg")
+        print("height: " + str(user_height) + " cm")
+        print("current calorie intake: " + "TODO" + " cal")
+        print("recommended calorie intake: " + str(get_calorie_recommendation(user_weight, user_height)) + " cal")
     elif(command == 'meal'):
         # get user input to add a meal in tuple form to 'meal_list' variable
         print("info")
     elif(command == 'sw'):
         # set weight
-        print("info")
+        user_weight = float(input("What is your weight (in kg)? "))
     elif(command == 'sh'):
         # set height
-        print("info")
+        user_height = float(input("What is your height (in cm)? "))
     elif(command == 'rec'):
         # get cal rec
         print("info")
