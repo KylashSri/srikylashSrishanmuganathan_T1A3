@@ -11,7 +11,10 @@ while:
     print("your current calorie intake today is " + current_cal_intake + " calories")
     meal_name = input("what have you eaten today? ")
     meal_calories = input("how many calories did it have? ") # error handle for NaN
-    break
+    if(meal_calories != meal_calories):
+        print("meal_calories is must be a number")
+        break
+    
 
 def get_calorie_recommendation(weight, height):
     return 14*weight + 5*height
