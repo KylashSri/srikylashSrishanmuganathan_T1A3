@@ -2,7 +2,8 @@
 This project aims to build a console application that gives the user a way to calorie count and get a rough daily calorie intake recommendation based on height and weight. 
 
 ## Use instructions:
-* run `python src/app.py` in this folder, and follow instructions
+* make sure you have python installed!
+* run `python3 src/app.py` in this folder
 
 ## Application features:
 * Ability to input height and weight through console
