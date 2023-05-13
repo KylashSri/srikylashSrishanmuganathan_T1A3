@@ -10,8 +10,8 @@ while:
     print("recommended daily calorie intake is " + daily_rec_cal + " calories")
     print("your current calorie intake today is " + current_cal_intake + " calories")
     meal_name = input("what have you eaten today? ")
-    meal_calories = input("how many calories did it have? ") # error handle for NaN
-    if(meal_calories != meal_calories):
+    meal_calories = input("how many calories did it have? ") 
+    if(meal_calories != meal_calories): # error handle for NaN
         print("meal_calories is must be a number")
         break
     
