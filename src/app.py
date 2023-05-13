@@ -15,12 +15,6 @@ def add_food_item_to_list(new_item, food_dataframe):
     food_dataframe = pd.concat([food_dataframe, new_food_item.to_frame().T], ignore_index=True)
     return food_dataframe
 
-def get_list_sum(list):
-    count = 0
-    for i in list:
-        count += i
-    return count
-
 food_item_dict = {'food_item': [], 'calorie_count': []}
 food_item_df = pd.DataFrame(food_item_dict)
 
