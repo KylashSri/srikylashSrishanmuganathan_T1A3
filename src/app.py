@@ -18,3 +18,11 @@ while:
 
 def get_calorie_recommendation(weight, height):
     return 14*weight + 5*height
+
+def set_user_weight():
+    user_weight = input("What is your weight (in kg)? ")
+    return
+
+def set_user_height():
+    user_height = input("What is your height (in cm)? ")
+    return
