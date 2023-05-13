@@ -11,17 +11,17 @@ def create_new_food_item(food_name, calorie_count):
     return {'food_item': food_name, 'calorie_count': calorie_count}
 
 def add_food_item_to_list(new_item, food_dataframe):
-    print("food_dataframe")
-    print(food_dataframe)
     new_food_item = pd.Series(new_item)
-    print("new food item")
-    print(new_food_item)
     food_dataframe = pd.concat([food_dataframe, new_food_item.to_frame().T], ignore_index=True)
-    print("food_dataframe")
-    print(food_dataframe)
     return food_dataframe
 
-food_item_dict = {'food_item': ["foodname1"], 'calorie_count': [100]}
+def get_list_sum(list):
+    count = 0
+    for i in list:
+        count += i
+    return count
+
+food_item_dict = {'food_item': [], 'calorie_count': []}
 food_item_df = pd.DataFrame(food_item_dict)
 
 print("welcome to Calorie Tracker")
@@ -31,7 +31,6 @@ user_weight = float(input("What is your weight (in kg)? "))
 user_height = float(input("What is your height (in cm)? "))
 
 print("your recommended daily calorie intake is " + str(get_calorie_recommendation(user_weight, user_height)))
-print("your current calorie intake today is " + "TODO" + " calories")
 
 print("type 'help' for command list")
 
@@ -53,7 +52,7 @@ while True:
         # loop through meal_list to find current calorie intake
         print("weight: " + str(user_weight) + " kg")
         print("height: " + str(user_height) + " cm")
-        print("current calorie intake: " + "TODO" + " cal")
+        print("current calorie intake: " + str(food_item_df['calorie_count'].sum()) + " cal")
         print("recommended calorie intake: " + str(get_calorie_recommendation(user_weight, user_height)) + " cal")
     elif(command == 'meal'):
         # get user input to add a meal in tuple form to 'meal_list' variable
@@ -61,6 +60,8 @@ while True:
         new_item_calorie_count = float(input("calorie count of said item: "))
         new_item = create_new_food_item(new_item_name, new_item_calorie_count)
         food_item_df = add_food_item_to_list(new_item, food_item_df)
+        print("current calorie intake: " + str(food_item_df['calorie_count'].sum()) + " cal")
+        print("recommended calorie intake: " + str(get_calorie_recommendation(user_weight, user_height)) + " cal")
     elif(command == 'sw'):
         # set weight
         user_weight = float(input("What is your weight (in kg)? "))
@@ -69,16 +70,24 @@ while True:
         user_height = float(input("What is your height (in cm)? "))
     elif(command == 'rec'):
         # get cal rec
-        print("info")
+        print("current calorie intake: " + str(food_item_df['calorie_count'].sum()) + " cal")
+        print("recommended calorie intake: " + str(get_calorie_recommendation(user_weight, user_height)) + " cal")
     elif(command == 'ml'):
         # view meal list
         print(food_item_df)
+        print("current calorie intake: " + str(food_item_df['calorie_count'].sum()) + " cal")
+        print("recommended calorie intake: " + str(get_calorie_recommendation(user_weight, user_height)) + " cal")
     elif(command == 'reset'):
         # reset meal list
-        print("info")
+        food_item_dict = {'food_item': [], 'calorie_count': []}
+        food_item_df = pd.DataFrame(food_item_dict)
+        print("All food items added have now been removed")
     elif(command == 'hardreset'):
         # reset meal list and get prompted
-        print("info")
+        food_item_dict = {'food_item': [], 'calorie_count': []}
+        food_item_df = pd.DataFrame(food_item_dict)
+        user_weight = float(input("What is your weight (in kg)? "))
+        user_height = float(input("What is your height (in cm)? "))
     elif(command == 'quit' or command == "q"):
         break
     else:
