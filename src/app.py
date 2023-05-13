@@ -1,5 +1,3 @@
-import math
-import numpy as np
 import pandas as pd
 import curses
 from curses import wrapper
@@ -18,10 +16,10 @@ def add_food_item_to_list(new_item, food_dataframe):
 food_item_dict = {'food_item': [], 'calorie_count': []}
 food_item_df = pd.DataFrame(food_item_dict)
 
-print("welcome to Calorie Tracker")
-print("this program allows you to track how many calories you've had and compare it against a recommendation")
+print("Welcome to Calorie Tracker")
+print("This program allows you to track how many calories you've had and compare it against a recommendation")
 
-user_name = input("What is your username? ")
+# user_name = input("What is your username? ")
 user_weight = float(input("What is your weight (in kg)? "))
 user_height = float(input("What is your height (in cm)? "))
 
