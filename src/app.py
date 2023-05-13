@@ -18,15 +18,22 @@ print("your recommended calorie intake is " + get_calorie_recommendation(user_we
 while:
     print("type 'help' for command list")
     command = input()
-    if(command == 'help')
+    if(command == 'help'):
         print("type 'help' to get the list of commands")
-        print("type '' to ")
-        print("type '' to ")
-        print("type '' to ")
-        print("type '' to ")
-        print("type '' to ")
-        print("type '' to ")
+        print("type 'info' to show current weight, height and current calorie intake")
+        print("type 'meal' to store information on a meal")
+        print("type 'sw' to change your weight to a new value")
+        print("type 'sh' to change your height to a new value")
+        print("type 'rec' to view recommended calorie intake")
+        print("type 'ml' to view ")
+        print("type 'reset' to reset meal list")
         print("type 'quit' to quit")
+    elif(command == 'info'):
+        # loop through meal_list to find current calorie intake
+    elif(command == 'add'):
+        # get user input to add a meal in tuple form to 'meal_list' variable
+    elif(command == 'quit'):
+        break
     
 
 def get_calorie_recommendation(weight, height):
