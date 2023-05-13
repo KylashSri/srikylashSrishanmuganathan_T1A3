@@ -7,10 +7,22 @@ from curses import wrapper
 def get_calorie_recommendation(weight, height):
     return 14*weight + 5*height
 
-def create_new_food_item
+def create_new_food_item(food_name, calorie_count):
+    return {'food_item': food_name, 'calorie_count': calorie_count}
 
-food_item_dict = {'food_item': [], 'calorie_count': []}
-food_item_df = pd.DataFrame(meal_list)
+def add_food_item_to_list(new_item, food_dataframe):
+    print("food_dataframe")
+    print(food_dataframe)
+    new_food_item = pd.Series(new_item)
+    print("new food item")
+    print(new_food_item)
+    food_dataframe = pd.concat([food_dataframe, new_food_item.to_frame().T], ignore_index=True)
+    print("food_dataframe")
+    print(food_dataframe)
+    return food_dataframe
+
+food_item_dict = {'food_item': ["foodname1"], 'calorie_count': [100]}
+food_item_df = pd.DataFrame(food_item_dict)
 
 print("welcome to Calorie Tracker")
 print("this program allows you to track how many calories you've had and compare it against a recommendation")
@@ -45,7 +57,10 @@ while True:
         print("recommended calorie intake: " + str(get_calorie_recommendation(user_weight, user_height)) + " cal")
     elif(command == 'meal'):
         # get user input to add a meal in tuple form to 'meal_list' variable
-        print("info")
+        new_item_name = input("food name: ")
+        new_item_calorie_count = float(input("calorie count of said item: "))
+        new_item = create_new_food_item(new_item_name, new_item_calorie_count)
+        food_item_df = add_food_item_to_list(new_item, food_item_df)
     elif(command == 'sw'):
         # set weight
         user_weight = float(input("What is your weight (in kg)? "))
@@ -56,8 +71,8 @@ while True:
         # get cal rec
         print("info")
     elif(command == 'ml'):
-        # meal list
-        print("info")
+        # view meal list
+        print(food_item_df)
     elif(command == 'reset'):
         # reset meal list
         print("info")
